@@ -7,7 +7,7 @@ const App: React.FC = () => {
 const [config, setConfig] = useState<AppConfig | null>({
   dataSource: '',
   sheetsUrl: '',
-  geminiApiKey: 'AIzaSyDG4YTSg7xELBVSci09MNpkJxr8X17YQy_M',
+  geminiApiKey: 'AIzaSyDiIFJjj8ixvreS1cxSaEjg2cQicPVuMSI',
   isConfigured: true
 });
 
