@@ -4,12 +4,13 @@ import SetupScreen from './components/SetupScreen';
 import { AppConfig } from './types';
 
 const App: React.FC = () => {
-  const [config, setConfig] = useState<AppConfig | null>({
+const [config, setConfig] = useState<AppConfig | null>({
   dataSource: '',
   sheetsUrl: '',
-  geminiApiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
+  geminiApiKey: 'AIzaSyDG4YTSg7xELBVSci09MNpkJxr8X17YQy_M',
   isConfigured: true
 });
+
 
   const [checking, setChecking] = useState(false);
 
