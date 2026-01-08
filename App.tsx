@@ -4,21 +4,16 @@ import SetupScreen from './components/SetupScreen';
 import { AppConfig } from './types';
 
 const App: React.FC = () => {
-  const [config, setConfig] = useState<AppConfig | null>(null);
-  const [checking, setChecking] = useState(true);
+  const [config, setConfig] = useState<AppConfig | null>({
+  dataSource: '',
+  sheetsUrl: '',
+  geminiApiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
+  isConfigured: true
+});
 
-  useEffect(() => {
-    // Check local storage for existing config
-    const storedConfig = localStorage.getItem('hotel_pro_config_v2');
-    if (storedConfig) {
-      try {
-        setConfig(JSON.parse(storedConfig));
-      } catch (e) {
-        console.error("Failed to parse stored config", e);
-      }
-    }
-    setChecking(false);
-  }, []);
+  const [checking, setChecking] = useState(false);
+
+ 
 
   const handleSetupComplete = (newConfig: Omit<AppConfig, 'isConfigured'>) => {
     const fullConfig: AppConfig = {
